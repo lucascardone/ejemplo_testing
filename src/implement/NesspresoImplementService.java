@@ -19,33 +19,33 @@ public class NesspresoImplementService implements NesspresoService{
     
     @Override
     public void Menu(){
-        Nesspreso n = new Nesspreso(10, 0);
-        int op;
+        Nesspreso nesspreso = new Nesspreso(10, 0);//capacidad maxima 10 litros, capacidad actual 0
+        int opcion;
         do{
             System.out.println("Opciones: \n0(finalizar)\n1(servir taza)\n2(vaciar cafetera)\n3(ingresar cafe)\n4(mostrar datos)");
-            op = input.nextInt();
-            switch(op){
+            opcion = input.nextInt();
+            switch(opcion){
                 case 0:
                     break;
                 case 1:
                     System.out.println("Tamaño de la taza:");
-                    n.setActualcap(ServCup(n.getActualcap(),input.nextInt()));
+                    nesspreso.setActualcap(ServCup(nesspreso.getActualcap(),input.nextInt()));
                     break;
                 case 2:
-                    n.setActualcap(EmptyPot(n.getActualcap()));
+                    nesspreso.setActualcap(EmptyPot(nesspreso.getActualcap()));
                     break;
                 case 3:
                     System.out.println("Cantidad de cafe a ingresar:");
-                    n.setActualcap(EnterCoffee(n.getMaxcap(),n.getActualcap(),input.nextInt()));
+                    nesspreso.setActualcap(EnterCoffee(nesspreso.getMaxcap(),nesspreso.getActualcap(),input.nextInt()));
                     break;
                 case 4:
-                    System.out.println(n.toString());
+                    System.out.println(nesspreso.toString());
                     break;
                 default:
                     System.out.println("Opción incorrecta");
                     break;
             }
-        }while(op != 0);
+        }while(opcion != 0);
     }
       
     
